@@ -1,39 +1,192 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Meu Site IHC</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WCAG 2.2 - Textos Alternativos e Multimídia</title>
+    <meta name="description" content="Demonstração dos critérios WCAG 2.2: 1.1.1, 1.2.1, 1.2.2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>Meu Site IHC</h1>
-    <nav>
-      <a href="#sobre">Sobre</a>
-      <a href="#prototipo">Protótipo</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </header>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre</h2>
-      <p>Este é um site criado para a disciplina de IHC.</p>
-    </section>
+    <header>
+        <nav>
+            <div class="container">
+                <h1>WCAG 2.2 - Acessibilidade</h1>
+                <ul>
+                    <li><a href="#criterio-1-1-1">1.1.1 Textos Alternativos</a></li>
+                    <li><a href="#criterio-1-2-1">1.2.1 Áudio e Vídeo</a></li>
+                    <li><a href="#criterio-1-2-2">1.2.2 Legendas</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
 
-    <section id="prototipo">
-      <h2>Protótipo</h2>
-      <iframe src="https://www.figma.com/embed?embed_host=share&url=SUA_URL_DO_PROTOTIPO" width="100%" height="400" allowfullscreen></iframe>
-    </section>
+    <main id="main-content">
+        <section class="hero">
+            <div class="container">
+                <h1>Front-end Acessível - Projeto IHC</h1>
+                <p>Implementação prática dos critérios WCAG 2.2: 1.1.1, 1.2.1 e 1.2.2</p>
+            </div>
+        </section>
 
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Email: seuemail@unb.br</p>
-    </section>
-  </main>
+        <!-- Critério 1.1.1 - Conteúdo Não-texto -->
+        <section id="criterio-1-1-1">
+            <div class="container">
+                <h2>1.1.1 - Conteúdo Não-texto</h2>
+                <p>Todo conteúdo não-texto deve ter uma alternativa em texto equivalente.</p>
+                
+                <div class="examples">
+                    <div class="example">
+                        <h3>Imagem Informativa</h3>
+                        <img src="https://picsum.photos/400/300?random=1" 
+                             alt="Gráfico de barras mostrando crescimento de vendas de 25% no último trimestre">
+                        <p><strong>Alt text:</strong> "Gráfico de barras mostrando crescimento de vendas de 25% no último trimestre"</p>
+                    </div>
 
-  <footer>
-    <p>&copy; 2025 Seu Nome</p>
-  </footer>
+                    <div class="example">
+                        <h3>Ícones Funcionais</h3>
+                        <button aria-label="Buscar no site">🔍</button>
+                        <button aria-label="Configurações">⚙️</button>
+                        <button aria-label="Favoritar">❤️</button>
+                        <p>Cada ícone possui <code>aria-label</code> descritivo.</p>
+                    </div>
+
+                    <div class="example">
+                        <h3>Imagem Decorativa</h3>
+                        <img src="https://picsum.photos/200/150?random=2" 
+                             alt="" role="presentation">
+                        <p>Imagem decorativa com <code>alt=""</code> e <code>role="presentation"</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critério 1.2.1 - Apenas Áudio e Apenas Vídeo -->
+        <section id="criterio-1-2-1">
+            <div class="container">
+                <h2>1.2.1 - Apenas Áudio e Apenas Vídeo (Pré-gravado)</h2>
+                <p>Mídia apenas com áudio ou vídeo deve ter alternativas equivalentes.</p>
+                
+                <div class="examples">
+                    <div class="example">
+                        <h3>Conteúdo Apenas Áudio</h3>
+                        <audio controls>
+                            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+                            <source src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" type="audio/ogg">
+                            <p>Seu navegador não suporta áudio. Leia a transcrição abaixo.</p>
+                        </audio>
+                        <div class="transcript">
+                            <h4>Transcrição:</h4>
+                            <p><strong>Narrador:</strong> "Bem-vindos ao tutorial de acessibilidade web. Neste áudio, vamos aprender sobre textos alternativos e como tornar conteúdo multimídia acessível."</p>
+                            <p><strong>Duração:</strong> 30 segundos</p>
+                        </div>
+                    </div>
+
+                    <div class="example">
+                        <h3>Vídeo Apenas Visual</h3>
+                        <video controls width="100%">
+                            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_360x240_5mb.mp4" type="video/mp4">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+                            <p>Vídeo não disponível. Leia a descrição abaixo.</p>
+                        </video>
+                        <div class="description">
+                            <h4>Descrição do Vídeo:</h4>
+                            <p>O vídeo demonstra navegação por teclado em uma interface web:</p>
+                            <ol>
+                                <li>Navegação pelos links usando Tab</li>
+                                <li>Ativação de botões com Enter</li>
+                                <li>Navegação em formulários</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critério 1.2.2 - Legendas -->
+        <section id="criterio-1-2-2">
+            <div class="container">
+                <h2>1.2.2 - Legendas (Pré-gravado)</h2>
+                <p>Legendas devem ser fornecidas para todo áudio em mídia sincronizada.</p>
+                
+                <div class="examples">
+                    <div class="example">
+                        <h3>Vídeo com Legendas</h3>
+                        <video controls width="100%">
+                            <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" type="video/mp4">
+                            <source src="https://sample-videos.com/zip/10/mp4/SampleVideo_720x480_5mb.mp4" type="video/mp4">
+                            <track kind="captions" src="legendas.vtt" srclang="pt-BR" label="Português" default>
+                            <p>Vídeo não disponível. <a href="#video-transcript">Ver transcrição</a>.</p>
+                        </video>
+                    </div>
+
+                    <div class="example">
+                        <h3 id="video-transcript">Transcrição Completa</h3>
+                        <div class="full-transcript">
+                            <h4>Tutorial: Acessibilidade Web</h4>
+                            <div class="transcript-line">
+                                <span class="timestamp">[00:00-00:15]</span>
+                                <span class="speaker">Instrutor:</span>
+                                <span class="text">Bem-vindos ao tutorial sobre acessibilidade web.</span>
+                            </div>
+                            <div class="transcript-line">
+                                <span class="timestamp">[00:16-00:30]</span>
+                                <span class="speaker">Instrutor:</span>
+                                <span class="text">Hoje aprenderemos sobre textos alternativos.</span>
+                            </div>
+                            <div class="transcript-line">
+                                <span class="timestamp">[00:31-00:45]</span>
+                                <span class="sound">[Som de digitação]</span>
+                                <span class="text">Vamos ver exemplos práticos.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="resources">
+            <div class="container">
+                <h2>Recursos Adicionais</h2>
+                <div class="resource-grid">
+                    <div class="resource">
+                        <h3>Ferramentas de Validação</h3>
+                        <ul>
+                            <li><a href="https://wave.webaim.org/" target="_blank">WAVE</a></li>
+                            <li><a href="https://www.deque.com/axe/" target="_blank">axe DevTools</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource">
+                        <h3>Documentação WCAG</h3>
+                        <ul>
+                            <li><a href="https://guia-wcag.com/" target="_blank">Entendendo o WCAG 2.2</a></li>
+                        </ul>
+                    </div>
+                    <div class="resource">
+                        <h3>Mídia Alternativa</h3>
+                        <ul>
+                            <li><a href="midia-alternativa.html">Versão com Mídia Simulada</a></li>
+                            <li>Use caso os vídeos/áudios não carreguem</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 - Projeto IHC: WCAG 2.2 Implementação</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-</html>
+</html> 
+
